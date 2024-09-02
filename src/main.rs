@@ -11,10 +11,18 @@ fn main() {
 
     let stdin = io::stdin();
     let stdout = io::stdout();
-    let mut stdout = stdout.lock();
 
-    for line in stdin.lock().lines() {
-        let line = line.expect("Failed to read line");
-        writeln!(stdout, "{}", line).expect("Failed to write line");
+    if let Err(e) = run_grep(query, stdin.lock(), stdout.lock()) {
+        eprint!("Error: {}", e)
     }
+}
+
+pub fn run_grep<R: BufRead, W: Write>(query: &str, reader: R, mut writer: W) -> io::Result<()> {
+    for line in reader.lines() {
+        let line = line.expect("Failed to read line");
+        if line.contains(query) {
+            writeln!(writer, "{}", line).expect("Failed to write line");
+        }
+    }
+    Ok(())
 }

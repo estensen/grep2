@@ -3,6 +3,9 @@ use std::io::{self, BufRead, Write};
 
 fn main() {
     let args: Vec<String> = env::args().collect();
+    if args.len() != 2 {
+        panic!("microgrep takes one argument");
+    }
     let query = &args[1];
     println!("Will search for {}", query);
 

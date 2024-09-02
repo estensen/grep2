@@ -1,0 +1,14 @@
+In the world of code so vast and wide,
+Rust stands strong, with memory on its side.
+No nulls to fear, no data race,
+Safety and speed in every trace.
+
+With lifetimes long and types so strong,
+Bugs and crashes are proven wrong.
+Concurrency with threads that never clash,
+Rust’s the language with a future so brash.
+
+From systems low to the web above,
+In Rust we trust, a language to love.
+Compile time checks, borrow and own,
+In Rust's embrace, we find our home.

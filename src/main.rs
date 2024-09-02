@@ -9,7 +9,6 @@ fn main() {
         panic!("microgrep takes one argument");
     }
     let query = &args[1];
-    println!("Will search for {}", query);
 
     let stdin = io::stdin();
     let stdout = io::stdout();
